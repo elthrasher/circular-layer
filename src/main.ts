@@ -24,10 +24,12 @@ export class MyStack extends Stack {
       runtime: Runtime.NODEJS_12_X,
     });
 
-    // This doesn't work if we uncomment the layer
     new NodejsFunction(this, 'testNodejsFunction', {
       entry: `${__dirname}/function.ts`,
+      // This line doesn't work. Get a circular dependency error.
       layers: [layer],
+      // This line works.
+      // layers: [{ layerVersionArn: layer.layerVersionArn } as LayerVersion],
       runtime: Runtime.NODEJS_12_X,
     });
   }

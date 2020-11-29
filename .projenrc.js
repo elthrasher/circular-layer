@@ -28,6 +28,7 @@ const project = new AwsCdkTypeScriptApp({
   deps: [
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-lambda-nodejs',
+    'esbuild',
   ] /* Runtime dependencies of this module. */,
   // devDeps: [],                                                              /* Build dependencies for this module. */
   // entrypoint: "lib/index.js",                                               /* Module entrypoint (`main` in `package.json`). */
